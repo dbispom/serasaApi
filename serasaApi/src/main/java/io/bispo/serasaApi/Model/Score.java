@@ -9,11 +9,11 @@ public class Score {
 
     private String scoreDescricao;
 
-    private String sinicial;
+    private int sinicial;
 
-    private String sfinal;
+    private int sfinal;
 
-    public Score(String scoreDescricao, String sinicial, String sfinal) {
+    public Score(String scoreDescricao, int sinicial, int sfinal) {
         this.scoreDescricao = scoreDescricao;
         this.sinicial = sinicial;
         this.sfinal = sfinal;
@@ -27,19 +27,19 @@ public class Score {
         this.scoreDescricao = scoreDescricao;
     }
 
-    public String getSinicial() {
+    public int getSinicial() {
         return sinicial;
     }
 
-    public void setSinicial(String sinicial) {
+    public void setSinicial(int sinicial) {
         this.sinicial = sinicial;
     }
 
-    public String getSfinal() {
+    public int getSfinal() {
         return sfinal;
     }
 
-    public void setSfinal(String sfinal) {
+    public void setSfinal(int sfinal) {
         this.sfinal = sfinal;
     }
 

@@ -1,11 +1,16 @@
 package io.bispo.serasaApi.Controller;
 
 import io.bispo.serasaApi.Model.Person;
+import io.bispo.serasaApi.Model.Score;
 import io.bispo.serasaApi.Service.PessoaService;
+import io.bispo.serasaApi.Service.ScoreService;
+import org.apache.coyote.Response;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
+import java.util.Map;
 import java.util.Optional;
 
 @RestController
@@ -14,6 +19,7 @@ public class ApiController {
 
     @Autowired
     private PessoaService pessoaService;
+    private ScoreService scoreService;
 
     @PostMapping("/pessoa")
     public void postPessoa() {
@@ -24,7 +30,9 @@ public class ApiController {
     }
 
     @PostMapping("/score")
-    public void postScore() {
+    public ResponseEntity<?> postScore(@RequestBody Map<String,
+            String> payload) throws Exception {
+        return scoreService.saveNewScore(payload);
     }
 
     @GetMapping("/pessoa/{id}")
