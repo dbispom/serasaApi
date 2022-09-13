@@ -5,7 +5,7 @@ import org.springframework.data.annotation.Id;
 public class Person {
 
     @Id
-    private String id;
+    private int id;
 
     private String nome;
     private String telefone;
@@ -25,7 +25,7 @@ public class Person {
         this.regiao = regiao;
     }
 
-    public String getId() {
+    public int getId() {
         return id;
     }
     public String getNome() {
